@@ -3,14 +3,14 @@
 This repository provides a tiny Java library for compact runtime checks, especially for ensuring preconditions.
 
 
-### Examples ###
+## Examples ##
 
 An example of a more advanced use of `Argument::check`:
 
 ```{java}
 public void foo(int i) {
     // Following check throws IllegalArgumentException if not satisfied with the detailed message
-    bar(Argument.check(i, i > 0, () -> String.format("Requiring positive number (given: %d)", i)));
+    bar(Argument.check(i, i > 0, () -> String.format("Requiring a positive number (given: %d)", i)));
 }
 
 private void bar(int i) {
@@ -36,7 +36,7 @@ For using the built library is needed:
 
 ## Licensing ##
 
-The whole content of this repository is icensed under the [CC BY-SA 4.0][CC-BY-SA] license. Contributions are accepted only under the same licensing terms, under the terms of [CC BY 4.0][CC-BY], or under a public domain license (like [CC0][CC0], so that the work based on the contributions might be published under the CC BY-SA license terms.
+The whole content of this repository is licensed under the [CC BY-SA 4.0][CC-BY-SA] license. Contributions are accepted only under the same licensing terms, under the terms of [CC BY 4.0][CC-BY], or under a public domain license (like [CC0][CC0]), so that the work based on the contributions might be published under the CC BY-SA license terms.
 
 [CC-BY-SA]:  http://creativecommons.org/licenses/by-sa/4.0/
 [CC-BY]:     http://creativecommons.org/licenses/by/4.0/
