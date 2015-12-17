@@ -1,0 +1,7 @@
+# Ignore derived artifacts
+/bin/
+
+# Ignore Eclipse settings
+/.settings/
+/.classpath
+/.project
