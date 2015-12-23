@@ -10,12 +10,12 @@ An example of a more advanced use of `Argument::check`:
 ```{java}
 public void foo(int i) {
     // Following check throws IllegalArgumentException if not satisfied with the detailed message
-    bar(Argument.check(i, i > 0, () -> String.format("Requiring a positive number (given: %d)", i)));
+    bar(Argument.check(i, i > 0, () -> String.format("Requiring a positive number (given: %d).", i)));
 }
 
 private void bar(int i) {
     assert (i > 0);
-    // Doing some stuff, requiring i to be positive. But this method is private
+    // Doing some stuff, requiring 'i' to be positive. But this method is private
     // and therefore it relies on the callers to provide already checked values.
 }
 ```
