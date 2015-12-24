@@ -9,20 +9,19 @@
  * <pre>
  * public void foo(int i) {
  *     // Following check throws IllegalArgumentException if not satisfied with the detailed message
- *     bar(Argument.check(i, i &gt; 0, () -&gt; String.format("Requiring a positive number (given: %d)", i)));
+ *     bar(Argument.check(i, i &gt; 0, () -&gt; String.format("Requiring a positive number (given: %d).", i)));
  * }
  *
  * private void bar(int i) {
  *     assert (i &gt; 0);
- *     // Doing some stuff, requiring i to be positive. But this method is private
+ *     // Doing some stuff, requiring 'i' to be positive. But this method is private
  *     // and therefore it relies on the callers to provide already checked values.
  * }
  * </pre>
  *
  * <p>
  * To make the checks cheaper, the exception suppliers are not checked whether
- * not being {@code null} when they are not needed. However, each such case is
- * guarded at least with {@code assert}, so that it is still possible to detect
- * code defects in the positive cases in a testing environment.
+ * not being {@code null}; all such cases are guarded with {@code assert}, so
+ * that code defects could be still detected in a testing environment.
  */
 package net.yetamine.checks;

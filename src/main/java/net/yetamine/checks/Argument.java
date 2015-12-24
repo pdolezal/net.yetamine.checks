@@ -74,8 +74,8 @@ public final class Argument {
      *             if the condition is not satisfied
      */
     public static <T> T check(T result, boolean condition, Supplier<String> messageSupplier) {
+        assert (messageSupplier != null) : "Message supplier must not be null.";
         if (condition) {
-            assert (messageSupplier != null) : "Message supplier must not be null.";
             return result;
         }
 
@@ -143,8 +143,8 @@ public final class Argument {
      *             if the condition is not satisfied
      */
     public static char check(char result, boolean condition, Supplier<String> messageSupplier) {
+        assert (messageSupplier != null) : "Message supplier must not be null.";
         if (condition) {
-            assert (messageSupplier != null) : "Message supplier must not be null.";
             return result;
         }
 
@@ -212,8 +212,8 @@ public final class Argument {
      *             if the condition is not satisfied
      */
     public static byte check(byte result, boolean condition, Supplier<String> messageSupplier) {
+        assert (messageSupplier != null) : "Message supplier must not be null.";
         if (condition) {
-            assert (messageSupplier != null) : "Message supplier must not be null.";
             return result;
         }
 
@@ -281,8 +281,8 @@ public final class Argument {
      *             if the condition is not satisfied
      */
     public static short check(short result, boolean condition, Supplier<String> messageSupplier) {
+        assert (messageSupplier != null) : "Message supplier must not be null.";
         if (condition) {
-            assert (messageSupplier != null) : "Message supplier must not be null.";
             return result;
         }
 
@@ -350,8 +350,8 @@ public final class Argument {
      *             if the condition is not satisfied
      */
     public static int check(int result, boolean condition, Supplier<String> messageSupplier) {
+        assert (messageSupplier != null) : "Message supplier must not be null.";
         if (condition) {
-            assert (messageSupplier != null) : "Message supplier must not be null.";
             return result;
         }
 
@@ -419,8 +419,8 @@ public final class Argument {
      *             if the condition is not satisfied
      */
     public static long check(long result, boolean condition, Supplier<String> messageSupplier) {
+        assert (messageSupplier != null) : "Message supplier must not be null.";
         if (condition) {
-            assert (messageSupplier != null) : "Message supplier must not be null.";
             return result;
         }
 
@@ -488,8 +488,8 @@ public final class Argument {
      *             if the condition is not satisfied
      */
     public static float check(float result, boolean condition, Supplier<String> messageSupplier) {
+        assert (messageSupplier != null) : "Message supplier must not be null.";
         if (condition) {
-            assert (messageSupplier != null) : "Message supplier must not be null.";
             return result;
         }
 
@@ -557,8 +557,8 @@ public final class Argument {
      *             if the condition is not satisfied
      */
     public static double check(double result, boolean condition, Supplier<String> messageSupplier) {
+        assert (messageSupplier != null) : "Message supplier must not be null.";
         if (condition) {
-            assert (messageSupplier != null) : "Message supplier must not be null.";
             return result;
         }
 

@@ -74,8 +74,8 @@ public final class IndexBounds {
      *             if the condition is not satisfied
      */
     public static <T> T check(T result, boolean condition, Supplier<String> messageSupplier) {
+        assert (messageSupplier != null) : "Message supplier must not be null.";
         if (condition) {
-            assert (messageSupplier != null) : "Message supplier must not be null.";
             return result;
         }
 
@@ -143,8 +143,8 @@ public final class IndexBounds {
      *             if the condition is not satisfied
      */
     public static int check(int result, boolean condition, Supplier<String> messageSupplier) {
+        assert (messageSupplier != null) : "Message supplier must not be null.";
         if (condition) {
-            assert (messageSupplier != null) : "Message supplier must not be null.";
             return result;
         }
 
@@ -212,8 +212,8 @@ public final class IndexBounds {
      *             if the condition is not satisfied
      */
     public static long check(long result, boolean condition, Supplier<String> messageSupplier) {
+        assert (messageSupplier != null) : "Message supplier must not be null.";
         if (condition) {
-            assert (messageSupplier != null) : "Message supplier must not be null.";
             return result;
         }
 

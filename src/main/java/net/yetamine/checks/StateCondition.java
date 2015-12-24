@@ -56,8 +56,8 @@ public final class StateCondition {
      *             if the condition is not satisfied
      */
     public static void check(boolean condition, Supplier<String> messageSupplier) {
+        assert (messageSupplier != null) : "Message supplier must not be null.";
         if (condition) {
-            assert (messageSupplier != null) : "Message supplier must not be null.";
             return;
         }
 
