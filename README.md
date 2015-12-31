@@ -1,4 +1,4 @@
-# net.yetamine.lang #
+# net.yetamine.checks #
 
 This repository provides a tiny Java library for compact runtime checks, especially for ensuring preconditions.
 
@@ -41,3 +41,5 @@ The whole content of this repository is licensed under the [CC BY-SA 4.0][CC-BY-
 [CC-BY-SA]:  http://creativecommons.org/licenses/by-sa/4.0/
 [CC-BY]:     http://creativecommons.org/licenses/by/4.0/
 [CC0]:       http://creativecommons.org/choose/zero/
+
+[![Yetamine logo](http://petr.dolezal.matfyz.cz/files/Yetamine_small.svg "Our logo")](http://petr.dolezal.matfyz.cz/files/Yetamine_large.svg)
