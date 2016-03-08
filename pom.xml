@@ -24,8 +24,8 @@
 
     <parent>
         <groupId>net.yetamine</groupId>
-        <artifactId>net.yetamine</artifactId>
-        <version>3.0.2</version>
+        <artifactId>artifact-osgi</artifactId>
+        <version>1.1.0</version>
     </parent>
 
     <groupId>net.yetamine</groupId>
@@ -50,17 +50,24 @@
         <url>https://github.com/pdolezal/net.yetamine.checks.git</url>
     </scm>
 
+    <properties>
+        <pet4bnd.output>${project.build.directory}/exports.bnd</pet4bnd.output>
+    </properties>
+
     <build>
         <plugins>
+            <plugin>
+                <groupId>net.yetamine</groupId>
+                <artifactId>pet4bnd-maven-plugin</artifactId>
+            </plugin>
+
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
 
                 <configuration>
                     <instructions>
-                        <Export-Package>
-                            net.yetamine.checks.*
-                        </Export-Package>
+                        <_include>${pet4bnd.output}</_include>
                     </instructions>
                 </configuration>
             </plugin>

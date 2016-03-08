@@ -1,0 +1,8 @@
+# OSGi package version definitions
+
+# Target bundle version (should match the final artifact version)
+$bundle: 1.0.0 < 2.0.0
+
+# Packages to export
+# Currently a single package exists, so use the bundle's version
+net.yetamine.checks: $bundle
