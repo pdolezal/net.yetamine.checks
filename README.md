@@ -27,7 +27,6 @@ For building this project is needed:
 
 * JDK 8 or newer.
 * Maven 3.3 or newer.
-* Yetamine parent POM: see [net.yetamine](http://github.com/pdolezal/net.yetamine).
 
 For using the built library is needed:
 
@@ -36,10 +35,9 @@ For using the built library is needed:
 
 ## Licensing ##
 
-The whole content of this repository is licensed under the [CC BY-SA 4.0][CC-BY-SA] license. Contributions are accepted only under the same licensing terms, under the terms of [CC BY 4.0][CC-BY], or under a public domain license (like [CC0][CC0]), so that the work based on the contributions might be published under the CC BY-SA license terms.
+The project is licensed under the [Apache 2.0 license](http://www.apache.org/licenses/LICENSE-2.0). For previous versions of this repository the original or current license can be chosen, i.e., the current license applies as an option for all previously published content.
 
-[CC-BY-SA]:  http://creativecommons.org/licenses/by-sa/4.0/
-[CC-BY]:     http://creativecommons.org/licenses/by/4.0/
-[CC0]:       http://creativecommons.org/choose/zero/
+Contributions to the project are welcome and accepted if they can be incorporated without the need of changing the license or license conditions and terms.
+
 
 [![Yetamine logo](http://petr.dolezal.matfyz.cz/files/Yetamine_small.svg "Our logo")](http://petr.dolezal.matfyz.cz/files/Yetamine_large.svg)
