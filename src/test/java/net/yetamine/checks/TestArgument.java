@@ -16,6 +16,9 @@
 
 package net.yetamine.checks;
 
+import java.util.Arrays;
+import java.util.Collection;
+
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -24,6 +27,85 @@ import org.testng.annotations.Test;
  * Tests {@link Argument}.
  */
 public final class TestArgument {
+
+    /**
+     * A helper private exception that can't definitely be used elsewhere.
+     */
+    private static final class FailingException extends Exception {
+
+        /** Serialization version: 1 */
+        private static final long serialVersionUID = 1L;
+
+        /**
+         * Creates a new instance.
+         */
+        public FailingException() {
+            // Default constructor
+        }
+    }
+
+    /**
+     * Tests passing checks.
+     *
+     * @throws FailingException
+     *             if something fails
+     */
+    @Test
+    public void castPassed() throws FailingException {
+        final Object o = new StringBuilder();
+
+        Assert.assertSame(Argument.cast(o, true, FailingException::new), o);
+        Assert.assertSame(Argument.cast(o, true), o);
+
+        Argument.cast(null, true);
+        Argument.cast(null, true, FailingException::new);
+
+        // Tests assignments
+        @SuppressWarnings("unused")
+        StringBuilder s = null;
+        s = Argument.cast(o, true);
+        s = Argument.cast(o, true, FailingException::new);
+
+        // Tests unchecked casts
+        Collection<String> cs = null;
+        final Object co = Arrays.asList("A", "B", "C");
+
+        cs = Argument.cast(co, co instanceof Collection<?>);
+        Assert.assertSame(cs, co);
+
+        cs = Argument.cast(co, co instanceof Collection<?>, FailingException::new);
+        Assert.assertSame(cs, co);
+    }
+
+    /**
+     * Tests failing checks.
+     *
+     * @throws FailingException
+     *             if something fails
+     */
+    @Test(expectedExceptions = { FailingException.class })
+    public void castFailing0() throws FailingException {
+        Argument.cast(null, false, FailingException::new);
+    }
+
+    /**
+     * Tests failing checks.
+     *
+     * @throws FailingException
+     *             if something fails
+     */
+    @Test(expectedExceptions = { FailingException.class })
+    public void castFailing1_O() throws FailingException {
+        Argument.cast(new Object(), false, FailingException::new);
+    }
+
+    /**
+     * Tests failing checks.
+     */
+    @Test(expectedExceptions = { ClassCastException.class })
+    public void castFailing2_O() {
+        Argument.cast(new Object(), false);
+    }
 
     /**
      * Tests passing checks.

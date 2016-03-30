@@ -23,6 +23,85 @@ import java.util.function.Supplier;
  */
 public final class Argument {
 
+    // Value casting methods
+
+    /**
+     * Casts an argument to the desired formal type, relying on the result of
+     * the type compatibility condition, which is passed as an argument.
+     *
+     * <p>
+     * This method equals basically to {@link #cast(Object, boolean, Supplier)}
+     * invoked as <code>cast(result, castable, ClassCastException::new)</code>.
+     *
+     * @param <T>
+     *            the type of the result
+     * @param result
+     *            the argument to check and return
+     * @param castable
+     *            the result of the condition whether the argument may be cast.
+     *            If {@code true}, the argument is cast and returned, otherwise
+     *            {@link ClassCastException} with no details is thrown.
+     *
+     * @return the argument to check
+     *
+     * @throws ClassCastException
+     *             if the condition is not satisfied
+     */
+    public static <T> T cast(Object result, boolean castable) {
+        return cast(result, castable, ClassCastException::new);
+    }
+
+    /**
+     * Casts an argument to the desired formal type, relying on the result of
+     * the type compatibility condition, which is passed as an argument.
+     *
+     * <p>
+     * The usual pattern for using this method uses {@code instanceof} checks to
+     * supply the condition resolution. Still, it does not prevent the code from
+     * failing due to {@link ClassCastException} later if the cast is unchecked,
+     * but it provides usually sufficient protection, which is especially useful
+     * when dealing with generics, e.g., when dealing with serializable classes:
+     *
+     * <pre>
+     * final Collection&lt;String&gt; result = cast(arg, arg instanceof Collection&lt;?&gt;, ClassCastException::new);
+     * </pre>
+     *
+     * Note that the unchecked conversion needs assigning to a variable of the
+     * desired type, so that JVM could throw {@link ClassCastException} if the
+     * assignment is impossible despite of the condition.
+     *
+     * @param <T>
+     *            the type of the result
+     * @param <X>
+     *            the type of the exception to throw
+     * @param result
+     *            the argument to check and return
+     * @param castable
+     *            the result of the condition whether the argument may be cast.
+     *            If {@code true}, the argument is cast and returned, otherwise
+     *            the exception (provided by the exception supplier) is thrown.
+     * @param exceptionSupplier
+     *            the supplier of the exception which is thrown when the
+     *            condition is not met. It must not be {@code null}.
+     *
+     * @return the argument to check
+     *
+     * @throws X
+     *             if the condition is not satisfied
+     */
+    @SuppressWarnings("unchecked")
+    public static <T, X extends Throwable> T cast(Object result, boolean castable, Supplier<? extends X> exceptionSupplier) throws X {
+        assert (exceptionSupplier != null) : "Exception supplier must not be null.";
+
+        if (castable) {
+            return (T) result;
+        }
+
+        throw exceptionSupplier.get();
+    }
+
+    // Regular checking methods
+
     /**
      * Checks an argument whether it satisfies a condition.
      *
