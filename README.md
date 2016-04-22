@@ -40,4 +40,4 @@ The project is licensed under the [Apache 2.0 license](http://www.apache.org/lic
 Contributions to the project are welcome and accepted if they can be incorporated without the need of changing the license or license conditions and terms.
 
 
-[![Yetamine logo](http://petr.dolezal.matfyz.cz/files/Yetamine_small.svg "Our logo")](http://petr.dolezal.matfyz.cz/files/Yetamine_large.svg)
+[![Yetamine logo](https://github.com/pdolezal/net.yetamine/raw/master/about/Yetamine_small.png "Our logo")](https://github.com/pdolezal/net.yetamine/blob/master/about/Yetamine_large.png)
