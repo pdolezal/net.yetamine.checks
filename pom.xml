@@ -30,7 +30,7 @@
 
     <groupId>net.yetamine</groupId>
     <artifactId>net.yetamine.checks</artifactId>
-    <version>2.0.0-SNAPSHOT</version>
+    <version>1.1.0</version>
     <packaging>bundle</packaging>
 
     <name>net.yetamine.checks</name>
