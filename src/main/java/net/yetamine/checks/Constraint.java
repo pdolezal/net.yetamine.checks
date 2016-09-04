@@ -38,8 +38,7 @@ public final class Constraint {
      * @throws X
      *             if the condition result is {@code false}
      */
-    public static <X extends Throwable> // @formatter:break
-    void check(boolean condition, Supplier<? extends X> exceptionSupplier) throws X {
+    public static <X extends Throwable> void check(boolean condition, Supplier<? extends X> exceptionSupplier) throws X {
         assert (exceptionSupplier != null) : "Exception supplier must not be null.";
         if (condition) {
             return;
@@ -68,8 +67,7 @@ public final class Constraint {
      * @throws X
      *             if the condition result is {@code false}
      */
-    public static <T, X extends Throwable> // @formatter:break
-    T check(T result, Predicate<? super T> condition, Supplier<? extends X> exceptionSupplier) throws X {
+    public static <T, X extends Throwable> T check(T result, Predicate<? super T> condition, Supplier<? extends X> exceptionSupplier) throws X {
         assert (exceptionSupplier != null) : "Exception supplier must not be null.";
         if (condition.test(result)) {
             return result;
@@ -98,8 +96,7 @@ public final class Constraint {
      * @throws X
      *             if the condition result is {@code false}
      */
-    public static <T, X extends Throwable> // @formatter:break
-    T check(T result, boolean condition, Supplier<? extends X> exceptionSupplier) throws X {
+    public static <T, X extends Throwable> T check(T result, boolean condition, Supplier<? extends X> exceptionSupplier) throws X {
         assert (exceptionSupplier != null) : "Exception supplier must not be null.";
         if (condition) {
             return result;
@@ -126,8 +123,7 @@ public final class Constraint {
      * @throws X
      *             if the condition result is {@code false}
      */
-    public static <X extends Throwable> // @formatter:break
-    char check(char result, boolean condition, Supplier<? extends X> exceptionSupplier) throws X {
+    public static <X extends Throwable> char check(char result, boolean condition, Supplier<? extends X> exceptionSupplier) throws X {
         assert (exceptionSupplier != null) : "Exception supplier must not be null.";
         if (condition) {
             return result;
@@ -154,8 +150,7 @@ public final class Constraint {
      * @throws X
      *             if the condition result is {@code false}
      */
-    public static <X extends Throwable> // @formatter:break
-    byte check(byte result, boolean condition, Supplier<? extends X> exceptionSupplier) throws X {
+    public static <X extends Throwable> byte check(byte result, boolean condition, Supplier<? extends X> exceptionSupplier) throws X {
         assert (exceptionSupplier != null) : "Exception supplier must not be null.";
         if (condition) {
             return result;
@@ -182,8 +177,7 @@ public final class Constraint {
      * @throws X
      *             if the condition result is {@code false}
      */
-    public static <X extends Throwable> // @formatter:break
-    short check(short result, boolean condition, Supplier<? extends X> exceptionSupplier) throws X {
+    public static <X extends Throwable> short check(short result, boolean condition, Supplier<? extends X> exceptionSupplier) throws X {
         assert (exceptionSupplier != null) : "Exception supplier must not be null.";
         if (condition) {
             return result;
@@ -210,8 +204,7 @@ public final class Constraint {
      * @throws X
      *             if the condition result is {@code false}
      */
-    public static <X extends Throwable> // @formatter:break
-    int check(int result, boolean condition, Supplier<? extends X> exceptionSupplier) throws X {
+    public static <X extends Throwable> int check(int result, boolean condition, Supplier<? extends X> exceptionSupplier) throws X {
         assert (exceptionSupplier != null) : "Exception supplier must not be null.";
         if (condition) {
             return result;
@@ -238,8 +231,7 @@ public final class Constraint {
      * @throws X
      *             if the condition result is {@code false}
      */
-    public static <X extends Throwable> // @formatter:break
-    long check(long result, boolean condition, Supplier<? extends X> exceptionSupplier) throws X {
+    public static <X extends Throwable> long check(long result, boolean condition, Supplier<? extends X> exceptionSupplier) throws X {
         assert (exceptionSupplier != null) : "Exception supplier must not be null.";
         if (condition) {
             return result;
@@ -266,8 +258,7 @@ public final class Constraint {
      * @throws X
      *             if the condition result is {@code false}
      */
-    public static <X extends Throwable> // @formatter:break
-    float check(float result, boolean condition, Supplier<? extends X> exceptionSupplier) throws X {
+    public static <X extends Throwable> float check(float result, boolean condition, Supplier<? extends X> exceptionSupplier) throws X {
         assert (exceptionSupplier != null) : "Exception supplier must not be null.";
         if (condition) {
             return result;
@@ -294,8 +285,7 @@ public final class Constraint {
      * @throws X
      *             if the condition result is {@code false}
      */
-    public static <X extends Throwable> // @formatter:break
-    double check(double result, boolean condition, Supplier<? extends X> exceptionSupplier) throws X {
+    public static <X extends Throwable> double check(double result, boolean condition, Supplier<? extends X> exceptionSupplier) throws X {
         assert (exceptionSupplier != null) : "Exception supplier must not be null.";
         if (condition) {
             return result;
