@@ -25,7 +25,7 @@
     <parent>
         <groupId>net.yetamine</groupId>
         <artifactId>artifact-osgi</artifactId>
-        <version>1.1.0</version>
+        <version>1.1.1</version>
     </parent>
 
     <groupId>net.yetamine</groupId>
