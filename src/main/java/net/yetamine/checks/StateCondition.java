@@ -24,6 +24,13 @@ import java.util.function.Supplier;
 public final class StateCondition {
 
     /**
+     * Prevents creating instances of this class.
+     */
+    private StateCondition() {
+        throw new AssertionError();
+    }
+
+    /**
      * Checks whether a state condition is satisfied.
      *
      * @param condition
@@ -78,9 +85,5 @@ public final class StateCondition {
         }
 
         throw new IllegalStateException(messageSupplier.get());
-    }
-
-    private StateCondition() {
-        throw new AssertionError();
     }
 }

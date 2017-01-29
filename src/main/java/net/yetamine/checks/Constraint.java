@@ -25,6 +25,13 @@ import java.util.function.Supplier;
 public final class Constraint {
 
     /**
+     * Prevents creating instances of this class.
+     */
+    private Constraint() {
+        throw new AssertionError();
+    }
+
+    /**
      * Checks whether a condition is satisfied.
      *
      * @param <X>
@@ -292,9 +299,5 @@ public final class Constraint {
         }
 
         throw exceptionSupplier.get();
-    }
-
-    private Constraint() {
-        throw new AssertionError();
     }
 }

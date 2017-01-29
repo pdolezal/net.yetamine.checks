@@ -24,6 +24,13 @@ import java.util.function.Supplier;
 public final class IndexBounds {
 
     /**
+     * Prevents creating instances of this class.
+     */
+    private IndexBounds() {
+        throw new AssertionError();
+    }
+
+    /**
      * Checks an index whether it satisfies a condition.
      *
      * @param <T>
@@ -234,9 +241,5 @@ public final class IndexBounds {
         }
 
         throw new IndexOutOfBoundsException(messageSupplier.get());
-    }
-
-    private IndexBounds() {
-        throw new AssertionError();
     }
 }

@@ -23,6 +23,13 @@ import java.util.function.Supplier;
  */
 public final class Argument {
 
+    /**
+     * Prevents creating instances of this class.
+     */
+    private Argument() {
+        throw new AssertionError();
+    }
+
     // Value casting methods
 
     /**
@@ -658,9 +665,5 @@ public final class Argument {
         }
 
         throw new IllegalArgumentException(messageSupplier.get());
-    }
-
-    private Argument() {
-        throw new AssertionError();
     }
 }
